@@ -4,7 +4,7 @@
 const AniScrape = require("./src/main/AniScrape.js");
 
 module.exports = {
-    AniScrape: AniScrape
+    Client: AniScrape
 }
 
 // Test.run(module.exports);
