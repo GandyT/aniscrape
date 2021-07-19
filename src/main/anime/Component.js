@@ -1,3 +1,5 @@
+const Config = require("../../config.json");
+
 class Component {
     constructor(data) {
         this.data = data;
@@ -13,6 +15,15 @@ class Component {
         }
 
         this.genres = genreStr.trim().split(",");
+        this.genres = this.genres.map(genreNumber => {
+            for (let [key, value] of Object.entries(Config.GENRE_MAP)) {
+                if (value == genreNumber) {
+                    return key;
+                }
+            }
+
+            return "Anime";
+        });
 
         /* TITLE */
         let titleData = data.slice(data.indexOf("<h2 class=\"h2_anime_title\">") + "<h2 class=\"h2_anime_title\">".length);

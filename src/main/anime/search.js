@@ -8,7 +8,7 @@ const fetchGenre = (genre) => {
             rej("[ERROR] Invalid Genre");
         }
 
-        let genreUrl = `${Config.ENDPOINT}/anime/genre/1/${genre}`;
+        let genreUrl = `${Config.ENDPOINT}/anime/genre/${Config.GENRE_MAP[genre]}/${genre}`;
         let page = 1;
         let pageQuery = "";
         let results = [];
